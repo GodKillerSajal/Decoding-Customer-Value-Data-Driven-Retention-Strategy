@@ -1,0 +1,41 @@
+-- Q4a: Payment Method Distribution by Tier
+value_tier,payment_method,count,pct_within_tier
+Diamond,Credit Card,107,18.3
+Diamond,Debit Card,104,17.8
+Diamond,Paypal,103,17.6
+Diamond,Cash,102,17.4
+Diamond,Venmo,90,15.4
+Diamond,Bank Transfer,79,13.5
+Gold,Credit Card,241,17.7
+Gold,Paypal,236,17.3
+Gold,Venmo,229,16.8
+Gold,Cash,226,16.6
+Gold,Debit Card,221,16.2
+Gold,Bank Transfer,212,15.5
+Silver,Cash,183,18.8
+Silver,Paypal,167,17.1
+Silver,Credit Card,163,16.7
+Silver,Venmo,161,16.5
+Silver,Bank Transfer,155,15.9
+Silver,Debit Card,146,15.0
+Bronze,Paypal,171,17.5
+Bronze,Bank Transfer,166,17.0
+Bronze,Debit Card,165,16.9
+Bronze,Credit Card,160,16.4
+Bronze,Cash,159,16.3
+Bronze,Venmo,154,15.8
+
+-- Q4b: Shipping Type Preference - Loyal vs Non-Loyal
+loyalty_status,shipping_type,count,avg_spend,pct_within_group
+Loyal (Definition A),Store Pickup,81,65.8,17.6
+Loyal (Definition A),Free Shipping,80,62.04,17.4
+Loyal (Definition A),Standard,80,60.9,17.4
+Loyal (Definition A),Express,77,58.6,16.7
+Loyal (Definition A),Next Day Air,75,58.29,16.3
+Loyal (Definition A),2-Day Shipping,68,59.12,14.8
+Non-Loyal,Free Shipping,595,60.19,17.3
+Non-Loyal,Standard,574,58.12,16.7
+Non-Loyal,Next Day Air,573,58.68,16.7
+Non-Loyal,Express,569,60.73,16.5
+Non-Loyal,Store Pickup,569,59.05,16.5
+Non-Loyal,2-Day Shipping,559,60.93,16.3

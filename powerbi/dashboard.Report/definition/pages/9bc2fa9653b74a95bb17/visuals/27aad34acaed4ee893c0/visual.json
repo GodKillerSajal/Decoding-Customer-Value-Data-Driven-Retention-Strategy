@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "27aad34acaed4ee893c0",
+  "position": {
+    "x": 537.1002590182577,
+    "y": 254.72234506285932,
+    "z": 0,
+    "height": 238.71122623033673,
+    "width": 368.25573314801949,
+    "tabOrder": 301
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CustomerFeatures"
+                    }
+                  },
+                  "Property": "value_tier"
+                }
+              },
+              "queryRef": "CustomerFeatures.value_tier",
+              "active": true,
+              "displayName": "value_tier"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CustomerFeatures"
+                        }
+                      },
+                      "Property": "purchase_amount_usd"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(CustomerFeatures[purchase_amount_usd])",
+              "displayName": "Revenue ($)"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "22813357ec10c60bc731",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CustomerFeatures"
+              }
+            },
+            "Property": "value_tier"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "714b0a6dcc80a808e3c0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CustomerFeatures"
+                  }
+                },
+                "Property": "purchase_amount_usd"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

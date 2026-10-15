@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "6181322ae45a42a3b9ef",
+  "position": {
+    "x": 16,
+    "y": 506,
+    "z": 0,
+    "height": 196,
+    "width": 580,
+    "tabOrder": 400
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CustomerFeatures"
+                    }
+                  },
+                  "Property": "value_tier"
+                }
+              },
+              "queryRef": "CustomerFeatures.value_tier",
+              "active": true,
+              "displayName": "value_tier"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CustomerFeatures"
+                        }
+                      },
+                      "Property": "composite_score"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Average(CustomerFeatures[composite_score])",
+              "displayName": "Avg Composite Score"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

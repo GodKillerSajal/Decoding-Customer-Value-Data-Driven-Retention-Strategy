@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "739ac9d3a2924a238729",
+  "position": {
+    "x": 16,
+    "y": 254,
+    "z": 0,
+    "height": 240,
+    "width": 580,
+    "tabOrder": 300
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CustomerFeatures"
+                    }
+                  },
+                  "Property": "category"
+                }
+              },
+              "queryRef": "CustomerFeatures.category",
+              "active": true,
+              "displayName": "category"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CustomerFeatures"
+                        }
+                      },
+                      "Property": "previous_purchases"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Average(CustomerFeatures[previous_purchases])",
+              "displayName": "Avg Prev. Purchases (Higher = Retention)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

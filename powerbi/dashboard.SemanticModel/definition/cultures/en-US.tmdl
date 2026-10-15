@@ -1,0 +1,179 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "customerfeatures.gender": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CustomerFeatures",
+			          "ConceptualProperty": "gender"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gender": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "customerfeatures.value_tier": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CustomerFeatures",
+			          "ConceptualProperty": "value_tier"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value_tier": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "customerfeatures.season": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CustomerFeatures",
+			          "ConceptualProperty": "season"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "season": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "customerfeatures.category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CustomerFeatures",
+			          "ConceptualProperty": "category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "customerfeatures.discount_applied": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CustomerFeatures",
+			          "ConceptualProperty": "discount_applied"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "discount_applied": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "customerfeatures.age_bracket": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CustomerFeatures",
+			          "ConceptualProperty": "age_bracket"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "age_bracket": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "customerfeatures.frequency_of_purchases": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CustomerFeatures",
+			          "ConceptualProperty": "frequency_of_purchases"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "frequency_of_purchases": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "customerfeatures.location": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CustomerFeatures",
+			          "ConceptualProperty": "location"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "location": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

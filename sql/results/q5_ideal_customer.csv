@@ -1,0 +1,32 @@
+-- Q5: Ideal Customer Profile (Diamond Tier + Behavioural Loyalty A)
+age_bracket,gender,category,season,payment_method,shipping_type,frequency_of_purchases,count,avg_age,avg_spend,avg_prev_purchases,avg_rating
+Core Millennial,Female,Clothing,Summer,Debit Card,Standard,Bi-Weekly,2,27.5,79.5,44.5,3.5
+Gen X,Male,Clothing,Summer,Bank Transfer,Express,Weekly,2,53.5,76.5,45.5,4.55
+Core Millennial,Female,Accessories,Fall,Cash,Next Day Air,Fortnightly,1,28.0,87.0,37.0,3.8
+Core Millennial,Female,Accessories,Fall,Paypal,2-Day Shipping,Bi-Weekly,1,28.0,67.0,47.0,4.0
+Core Millennial,Female,Accessories,Spring,Bank Transfer,Express,Bi-Weekly,1,26.0,80.0,40.0,4.0
+Core Millennial,Female,Accessories,Spring,Credit Card,2-Day Shipping,Bi-Weekly,1,33.0,91.0,34.0,3.4
+Core Millennial,Female,Clothing,Fall,Cash,Free Shipping,Fortnightly,1,28.0,97.0,27.0,3.7
+Core Millennial,Female,Clothing,Fall,Credit Card,Express,Bi-Weekly,1,28.0,85.0,28.0,5.0
+Core Millennial,Female,Clothing,Fall,Credit Card,Next Day Air,Weekly,1,26.0,95.0,50.0,4.9
+Core Millennial,Female,Clothing,Spring,Cash,Free Shipping,Weekly,1,31.0,96.0,39.0,3.9
+Core Millennial,Female,Clothing,Spring,Cash,Standard,Fortnightly,1,28.0,83.0,44.0,4.3
+Core Millennial,Female,Clothing,Spring,Credit Card,Free Shipping,Bi-Weekly,1,29.0,86.0,47.0,4.4
+Core Millennial,Female,Clothing,Spring,Paypal,Store Pickup,Fortnightly,1,26.0,84.0,36.0,5.0
+Core Millennial,Female,Clothing,Summer,Bank Transfer,Store Pickup,Bi-Weekly,1,28.0,87.0,47.0,4.2
+Core Millennial,Female,Clothing,Winter,Cash,Free Shipping,Bi-Weekly,1,31.0,67.0,45.0,5.0
+Core Millennial,Female,Clothing,Winter,Debit Card,Express,Weekly,1,27.0,96.0,34.0,4.6
+Core Millennial,Female,Clothing,Winter,Venmo,Standard,Bi-Weekly,1,31.0,60.0,48.0,4.3
+Core Millennial,Female,Footwear,Spring,Bank Transfer,Store Pickup,Weekly,1,35.0,66.0,47.0,4.4
+Core Millennial,Female,Footwear,Summer,Paypal,Standard,Bi-Weekly,1,28.0,98.0,44.0,4.1
+Core Millennial,Female,Footwear,Winter,Cash,2-Day Shipping,Weekly,1,29.0,56.0,45.0,4.9
+Core Millennial,Female,Outerwear,Summer,Credit Card,Store Pickup,Fortnightly,1,29.0,86.0,45.0,4.3
+Core Millennial,Male,Accessories,Fall,Paypal,Next Day Air,Weekly,1,28.0,91.0,50.0,3.8
+Core Millennial,Male,Accessories,Winter,Credit Card,Store Pickup,Weekly,1,30.0,82.0,45.0,4.8
+Core Millennial,Male,Accessories,Winter,Venmo,Free Shipping,Weekly,1,29.0,62.0,41.0,4.3
+Core Millennial,Male,Clothing,Fall,Credit Card,Standard,Fortnightly,1,28.0,97.0,40.0,3.4
+Core Millennial,Male,Clothing,Fall,Venmo,Express,Weekly,1,32.0,48.0,47.0,3.9
+Core Millennial,Male,Clothing,Spring,Debit Card,Express,Fortnightly,1,33.0,57.0,48.0,3.9
+Core Millennial,Male,Clothing,Spring,Paypal,Standard,Weekly,1,30.0,93.0,28.0,4.6
+Core Millennial,Male,Clothing,Summer,Cash,Next Day Air,Bi-Weekly,1,26.0,69.0,46.0,3.8
+Core Millennial,Male,Clothing,Summer,Venmo,Store Pickup,Bi-Weekly,1,30.0,75.0,45.0,4.0

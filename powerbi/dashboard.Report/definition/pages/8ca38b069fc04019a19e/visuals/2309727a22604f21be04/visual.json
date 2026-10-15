@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "2309727a22604f21be04",
+  "position": {
+    "x": 16,
+    "y": 10,
+    "z": -1,
+    "height": 36,
+    "width": 760,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Promo Dependency vs. Organic Loyalty  |  Segment Analysis",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "15pt",
+                      "color": "#FFFFFF",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "Left"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

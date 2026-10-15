@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "aa61c4f33f48473380ad",
+  "position": {
+    "x": 16.011118832522587,
+    "y": 254.72234506285932,
+    "z": 0,
+    "height": 238.71122623033673,
+    "width": 521.08914018573512,
+    "tabOrder": 300
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CustomerFeatures"
+                    }
+                  },
+                  "Property": "value_tier"
+                }
+              },
+              "queryRef": "CustomerFeatures.value_tier",
+              "active": true,
+              "displayName": "value_tier"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CustomerFeatures"
+                        }
+                      },
+                      "Property": "customer_id"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "CountNonNull(CustomerFeatures[customer_id])",
+              "displayName": "Customers"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "707f0af54622c1770db4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CustomerFeatures"
+              }
+            },
+            "Property": "value_tier"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "49599e310851de01a5c0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "CustomerFeatures"
+                  }
+                },
+                "Property": "customer_id"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

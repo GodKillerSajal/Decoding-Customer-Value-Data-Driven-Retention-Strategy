@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "e01b0863f0704c95aa60",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": -2,
+    "height": 54,
+    "width": 1280,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "shape",
+    "objects": {
+      "fill": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fillColor": {
+              "solid": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

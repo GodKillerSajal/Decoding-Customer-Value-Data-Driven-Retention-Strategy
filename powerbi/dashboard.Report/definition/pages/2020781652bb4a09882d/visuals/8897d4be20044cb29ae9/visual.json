@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "8897d4be20044cb29ae9",
+  "position": {
+    "x": 606,
+    "y": 254,
+    "z": 0,
+    "height": 240,
+    "width": 658,
+    "tabOrder": 301
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CustomerFeatures"
+                    }
+                  },
+                  "Property": "category"
+                }
+              },
+              "queryRef": "CustomerFeatures.category",
+              "active": true,
+              "displayName": "category"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CustomerFeatures"
+                        }
+                      },
+                      "Property": "purchase_amount_usd"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Average(CustomerFeatures[purchase_amount_usd])",
+              "displayName": "Avg Spend ($)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,45 @@
+# Python
 __pycache__/
 *.py[cod]
-.ipynb_checkpoints/
+*$py.class
+*.ipynb_checkpoints
+.venv/
+env/
+venv/
+
+# Power BI Cache
+*.pbi
+*.pbit
+*.abf
+*.tmp
+*.log
+
+# OS & IDE
 .DS_Store
-.env
-.env.*
-!.env.example
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Archives & Temporary Submission files
+*.zip
+_submission_staging/
+project_output/
+Resources/
+AGENT_*.md
+validate.py
+verify_all.py
+create_submission.py
+Master_SQL_Dataset.csv
+Cleaned_Dataset.csv
+Problem Statement*
+
+# Root duplicates (already organized cleanly in data/, src/, powerbi/)
+/Dataset.csv
+/powerbi/Data/*.csv
+/data/raw/*.csv
+/data/processed/*.csv
+/build_dashboard.py
+/dashboard.pbip
+/dashboard.Report/
+/dashboard.SemanticModel/

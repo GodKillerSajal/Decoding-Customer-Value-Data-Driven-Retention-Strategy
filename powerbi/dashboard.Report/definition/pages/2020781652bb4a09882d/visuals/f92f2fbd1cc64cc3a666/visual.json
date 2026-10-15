@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "f92f2fbd1cc64cc3a666",
+  "position": {
+    "x": 606,
+    "y": 506,
+    "z": 0,
+    "height": 196,
+    "width": 658,
+    "tabOrder": 401
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CustomerFeatures"
+                    }
+                  },
+                  "Property": "age_bracket"
+                }
+              },
+              "queryRef": "CustomerFeatures.age_bracket",
+              "active": true,
+              "displayName": "age_bracket"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CustomerFeatures"
+                        }
+                      },
+                      "Property": "previous_purchases"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Average(CustomerFeatures[previous_purchases])",
+              "displayName": "Avg Prev. Purchases by Age"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

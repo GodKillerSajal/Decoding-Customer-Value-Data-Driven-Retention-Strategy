@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "175e56cc33924be7a565",
+  "position": {
+    "x": 606,
+    "y": 254,
+    "z": 0,
+    "height": 240,
+    "width": 300,
+    "tabOrder": 301
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CustomerFeatures"
+                    }
+                  },
+                  "Property": "discount_applied"
+                }
+              },
+              "queryRef": "CustomerFeatures.discount_applied",
+              "active": true,
+              "displayName": "discount_applied"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CustomerFeatures"
+                        }
+                      },
+                      "Property": "customer_id"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "CountNonNull(CustomerFeatures[customer_id])",
+              "displayName": "Customers"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

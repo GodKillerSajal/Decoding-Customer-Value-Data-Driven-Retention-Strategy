@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "7670a00ea25f449f9978",
+  "position": {
+    "x": 16,
+    "y": 490,
+    "z": 0,
+    "height": 212,
+    "width": 634,
+    "tabOrder": 400
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CustomerFeatures"
+                    }
+                  },
+                  "Property": "location"
+                }
+              },
+              "queryRef": "CustomerFeatures.location",
+              "active": true,
+              "displayName": "location"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "CustomerFeatures"
+                        }
+                      },
+                      "Property": "promo_dependency_score"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Average(CustomerFeatures[promo_dependency_score])",
+              "displayName": "Avg Promo Score — Lower = More Organic"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

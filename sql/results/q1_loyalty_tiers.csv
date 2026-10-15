@@ -1,0 +1,20 @@
+-- Q1a: Value Tier Distribution
+value_tier,customer_count,pct_of_base,avg_spend,avg_prev_purchases,avg_promo_score,avg_rating
+Diamond,585,15.0,83.79,41.4,1.19,4.07
+Gold,1365,35.0,66.31,30.8,1.27,3.84
+Silver,975,25.0,55.66,21.3,1.33,3.66
+Bronze,975,25.0,40.29,12.2,1.38,3.53
+
+-- Q1b: Promo Dependency by Value Tier
+value_tier,used_discount,used_promo,avg_promo_score,total,discount_rate_pct
+Diamond,251,251,1.19,585,42.9
+Gold,589,589,1.27,1365,43.2
+Silver,431,431,1.33,975,44.2
+Bronze,406,406,1.38,975,41.6
+
+-- Q1c: Loyalty Definition A vs B Overlap
+loyalty_segment,customer_count,total_revenue,avg_spend,avg_prev_purchases,avg_promo_score
+Neither,2479,135476.0,54.65,17.7,1.4
+Only Definition B,960,69536.0,72.43,39.5,1.66
+Both definitions,347,24000.0,69.16,38.5,0.0
+Only Definition A,114,4069.0,35.69,32.9,0.0

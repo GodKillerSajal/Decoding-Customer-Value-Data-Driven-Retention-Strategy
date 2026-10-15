@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "3249c69348494643866f",
+  "position": {
+    "x": 16,
+    "y": 10,
+    "z": -1,
+    "height": 36,
+    "width": 760,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Geographic Opportunity  |  Brand Pull vs. Discount-Driven Demand",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "15pt",
+                      "color": "#1B3A5C",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "Left"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

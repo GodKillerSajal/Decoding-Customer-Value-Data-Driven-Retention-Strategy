@@ -1,0 +1,378 @@
+table CustomerFeatures
+	lineageTag: cf000000-0000-0000-0000-000000000001
+
+	measure 'CF Total Customers' = COUNTROWS(CustomerFeatures)
+		formatString: #,0
+		lineageTag: cf000002-0000-0000-0000-000000000001
+
+	measure 'CF Total Revenue' = SUM(CustomerFeatures[purchase_amount_usd])
+		formatString: \$#,0
+		lineageTag: cf000002-0000-0000-0000-000000000002
+
+	measure 'CF Avg Spend' = AVERAGE(CustomerFeatures[purchase_amount_usd])
+		formatString: \$#,0.00
+		lineageTag: cf000002-0000-0000-0000-000000000003
+
+	measure 'CF Avg Rating' = AVERAGE(CustomerFeatures[review_rating])
+		formatString: 0.00
+		lineageTag: cf000002-0000-0000-0000-000000000004
+
+	measure 'CF Avg Prev Purchases' = AVERAGE(CustomerFeatures[previous_purchases])
+		formatString: #,0.0
+		lineageTag: cf000002-0000-0000-0000-000000000005
+
+	measure 'CF Diamond Count' = CALCULATE(COUNTROWS(CustomerFeatures), CustomerFeatures[value_tier] = "Diamond")
+		formatString: #,0
+		lineageTag: cf000002-0000-0000-0000-000000000006
+
+	measure 'CF Gold Count' = CALCULATE(COUNTROWS(CustomerFeatures), CustomerFeatures[value_tier] = "Gold")
+		formatString: #,0
+		lineageTag: cf000002-0000-0000-0000-000000000007
+
+	measure 'CF Silver Count' = CALCULATE(COUNTROWS(CustomerFeatures), CustomerFeatures[value_tier] = "Silver")
+		formatString: #,0
+		lineageTag: cf000002-0000-0000-0000-000000000008
+
+	measure 'CF Bronze Count' = CALCULATE(COUNTROWS(CustomerFeatures), CustomerFeatures[value_tier] = "Bronze")
+		formatString: #,0
+		lineageTag: cf000002-0000-0000-0000-000000000009
+
+	measure 'CF Promo Dependent %' = DIVIDE(CALCULATE(COUNTROWS(CustomerFeatures), CustomerFeatures[promo_dependency_score] = 3), COUNTROWS(CustomerFeatures))
+		formatString: 0.0%
+		lineageTag: cf000002-0000-0000-0000-000000000010
+
+	measure 'CF Loyalty A Rate %' = DIVIDE(CALCULATE(COUNTROWS(CustomerFeatures), CustomerFeatures[loyalty_a] = 1), COUNTROWS(CustomerFeatures))
+		formatString: 0.0%
+		lineageTag: cf000002-0000-0000-0000-000000000011
+
+	measure 'CF Discount Rate %' = DIVIDE(CALCULATE(COUNTROWS(CustomerFeatures), CustomerFeatures[discount_applied] = "Yes"), COUNTROWS(CustomerFeatures))
+		formatString: 0.0%
+		lineageTag: cf000002-0000-0000-0000-000000000012
+
+	measure 'CF Organic Revenue %' = DIVIDE(CALCULATE(SUM(CustomerFeatures[purchase_amount_usd]), CustomerFeatures[discount_applied] = "No"), SUM(CustomerFeatures[purchase_amount_usd]))
+		formatString: 0.0%
+		lineageTag: cf000002-0000-0000-0000-000000000013
+
+	measure 'CF Avg Promo Score' = AVERAGE(CustomerFeatures[promo_dependency_score])
+		formatString: 0.00
+		lineageTag: cf000002-0000-0000-0000-000000000014
+
+	measure 'CF Diamond Revenue %' = DIVIDE(CALCULATE(SUM(CustomerFeatures[purchase_amount_usd]), CustomerFeatures[value_tier] = "Diamond"), SUM(CustomerFeatures[purchase_amount_usd]))
+		formatString: 0.0%
+		lineageTag: cf000002-0000-0000-0000-000000000015
+
+	measure 'CF Subscriber Rate %' = DIVIDE(CALCULATE(COUNTROWS(CustomerFeatures), CustomerFeatures[is_subscriber] = 1), COUNTROWS(CustomerFeatures))
+		formatString: 0.0%
+		lineageTag: cf000002-0000-0000-0000-000000000016
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: cf000001-0000-0000-0000-000000000001
+		summarizeBy: count
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: cf000001-0000-0000-0000-000000000002
+		summarizeBy: average
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000003
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000004
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_amount_usd
+		dataType: int64
+		formatString: 0
+		lineageTag: cf000001-0000-0000-0000-000000000005
+		summarizeBy: sum
+		sourceColumn: purchase_amount_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column location
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000006
+		summarizeBy: none
+		sourceColumn: location
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000007
+		summarizeBy: none
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_rating
+		dataType: double
+		lineageTag: cf000001-0000-0000-0000-000000000008
+		summarizeBy: average
+		sourceColumn: review_rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column subscription_status
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000009
+		summarizeBy: none
+		sourceColumn: subscription_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_applied
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000010
+		summarizeBy: none
+		sourceColumn: discount_applied
+
+		annotation SummarizationSetBy = Automatic
+
+	column previous_purchases
+		dataType: int64
+		formatString: 0
+		lineageTag: cf000001-0000-0000-0000-000000000011
+		summarizeBy: average
+		sourceColumn: previous_purchases
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000012
+		summarizeBy: none
+		sourceColumn: payment_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column frequency_of_purchases
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000013
+		summarizeBy: none
+		sourceColumn: frequency_of_purchases
+
+		annotation SummarizationSetBy = Automatic
+
+	column promo_dependency_score
+		dataType: int64
+		formatString: 0
+		lineageTag: cf000001-0000-0000-0000-000000000014
+		summarizeBy: average
+		sourceColumn: promo_dependency_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column composite_score
+		dataType: double
+		lineageTag: cf000001-0000-0000-0000-000000000015
+		summarizeBy: average
+		sourceColumn: composite_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column value_tier
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000016
+		summarizeBy: none
+		sourceColumn: value_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column satisfaction_flag
+		dataType: int64
+		formatString: 0
+		lineageTag: cf000001-0000-0000-0000-000000000017
+		summarizeBy: sum
+		sourceColumn: satisfaction_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column loyalty_a
+		dataType: int64
+		formatString: 0
+		lineageTag: cf000001-0000-0000-0000-000000000018
+		summarizeBy: sum
+		sourceColumn: loyalty_a
+
+		annotation SummarizationSetBy = Automatic
+
+	column loyalty_b
+		dataType: int64
+		formatString: 0
+		lineageTag: cf000001-0000-0000-0000-000000000019
+		summarizeBy: sum
+		sourceColumn: loyalty_b
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_subscriber
+		dataType: int64
+		formatString: 0
+		lineageTag: cf000001-0000-0000-0000-000000000020
+		summarizeBy: sum
+		sourceColumn: is_subscriber
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_bracket
+		dataType: string
+		lineageTag: cf000001-0000-0000-0000-000000000021
+		summarizeBy: none
+		sourceColumn: age_bracket
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_purchased
+		dataType: string
+		lineageTag: 41fe9e4b-3517-4a7c-a06b-df15952b3021
+		summarizeBy: none
+		sourceColumn: item_purchased
+
+		annotation SummarizationSetBy = Automatic
+
+	column size
+		dataType: string
+		lineageTag: f1b67817-0532-472d-8c7d-b287159bad39
+		summarizeBy: none
+		sourceColumn: size
+
+		annotation SummarizationSetBy = Automatic
+
+	column color
+		dataType: string
+		lineageTag: 35bd3807-9b86-4a5c-b206-a8c419134fef
+		summarizeBy: none
+		sourceColumn: color
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_type
+		dataType: string
+		lineageTag: 79a57781-4750-4730-a0f5-cfde16e6cd3a
+		summarizeBy: none
+		sourceColumn: shipping_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column promo_code_used
+		dataType: string
+		lineageTag: 8778fa18-73bf-41bd-a507-6e0a31b7fc2a
+		summarizeBy: none
+		sourceColumn: promo_code_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating_was_null
+		dataType: int64
+		formatString: 0
+		lineageTag: 58530252-8f3e-45de-8a20-38bd8afd4cd9
+		summarizeBy: sum
+		sourceColumn: rating_was_null
+
+		annotation SummarizationSetBy = Automatic
+
+	column freq_promo_flag
+		dataType: int64
+		formatString: 0
+		lineageTag: c7420861-2b78-42d4-98f2-c0d51f18b2aa
+		summarizeBy: sum
+		sourceColumn: freq_promo_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column frequency_score
+		dataType: double
+		lineageTag: f21b62f2-0f32-4ca3-8f91-4e8072b75234
+		summarizeBy: sum
+		sourceColumn: frequency_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column norm_purchase_amount
+		dataType: double
+		lineageTag: 0b94b984-bf0e-460e-b332-33738fc4f950
+		summarizeBy: sum
+		sourceColumn: norm_purchase_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column norm_previous_purchases
+		dataType: double
+		lineageTag: 4c3d68c8-43ca-4225-84fb-bb516a21e7b9
+		summarizeBy: sum
+		sourceColumn: norm_previous_purchases
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column norm_review_rating
+		dataType: double
+		lineageTag: 80a84691-b76c-4e91-b2d7-f487c01e9645
+		summarizeBy: sum
+		sourceColumn: norm_review_rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column norm_frequency_score
+		dataType: double
+		lineageTag: d19f6f7b-ba5c-4ce9-ae68-9718f957ab44
+		summarizeBy: sum
+		sourceColumn: norm_frequency_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column frequency_numeric
+		dataType: double
+		lineageTag: e6a5e35e-1de3-4481-8d08-12e31b2ff70b
+		summarizeBy: sum
+		sourceColumn: frequency_numeric
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition CustomerFeatures = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("customer_features.csv"),[Delimiter=",", Columns=34, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"customer_id", Int64.Type}, {"age", Int64.Type}, {"gender", type text}, {"item_purchased", type text}, {"category", type text}, {"purchase_amount_usd", Int64.Type}, {"location", type text}, {"size", type text}, {"color", type text}, {"season", type text}, {"review_rating", type number}, {"subscription_status", type text}, {"shipping_type", type text}, {"discount_applied", type text}, {"promo_code_used", type text}, {"previous_purchases", Int64.Type}, {"payment_method", type text}, {"frequency_of_purchases", type text}, {"rating_was_null", Int64.Type}, {"freq_promo_flag", Int64.Type}, {"promo_dependency_score", Int64.Type}, {"frequency_score", type number}, {"norm_purchase_amount", type number}, {"norm_previous_purchases", type number}, {"norm_review_rating", type number}, {"norm_frequency_score", type number}, {"composite_score", type number}, {"value_tier", type text}, {"satisfaction_flag", Int64.Type}, {"loyalty_a", Int64.Type}, {"loyalty_b", Int64.Type}, {"frequency_numeric", type number}, {"is_subscriber", Int64.Type}, {"age_bracket", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

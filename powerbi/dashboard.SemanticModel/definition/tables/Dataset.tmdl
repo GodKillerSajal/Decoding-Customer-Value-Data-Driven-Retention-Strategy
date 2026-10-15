@@ -1,0 +1,213 @@
+table Dataset
+	lineageTag: 1b95986c-d716-4fcb-897a-c5cdf64f80c1
+
+	measure 'Total Customers' = COUNTROWS(Dataset)
+		formatString: #,0
+		lineageTag: a1000000-0000-0000-0000-000000000001
+
+	measure 'Total Revenue' = SUM(Dataset[Purchase Amount (USD)])
+		formatString: \$#,0
+		lineageTag: a1000000-0000-0000-0000-000000000002
+
+	measure 'Avg Purchase Amount' = AVERAGE(Dataset[Purchase Amount (USD)])
+		formatString: \$#,0.00
+		lineageTag: a1000000-0000-0000-0000-000000000003
+
+	measure 'Avg Review Rating' = AVERAGE(Dataset[Review Rating])
+		formatString: 0.00
+		lineageTag: a1000000-0000-0000-0000-000000000004
+
+	measure 'Avg Previous Purchases' = AVERAGE(Dataset[Previous Purchases])
+		formatString: #,0.0
+		lineageTag: a1000000-0000-0000-0000-000000000005
+
+	measure 'Discount Rate %' = DIVIDE(CALCULATE(COUNTROWS(Dataset), Dataset[Discount Applied] = "Yes"), COUNTROWS(Dataset))
+		formatString: 0.0%
+		lineageTag: a1000000-0000-0000-0000-000000000006
+
+	measure 'Subscriber Rate %' = DIVIDE(CALCULATE(COUNTROWS(Dataset), Dataset[Subscription Status] = "Yes"), COUNTROWS(Dataset))
+		formatString: 0.0%
+		lineageTag: a1000000-0000-0000-0000-000000000007
+
+	measure 'Promo Usage Rate %' = DIVIDE(CALCULATE(COUNTROWS(Dataset), Dataset[Promo Code Used] = "Yes"), COUNTROWS(Dataset))
+		formatString: 0.0%
+		lineageTag: a1000000-0000-0000-0000-000000000008
+
+	measure 'Revenue Without Discount' = CALCULATE(SUM(Dataset[Purchase Amount (USD)]), Dataset[Discount Applied] = "No")
+		formatString: \$#,0
+		lineageTag: a1000000-0000-0000-0000-000000000009
+
+	measure 'Revenue With Discount' = CALCULATE(SUM(Dataset[Purchase Amount (USD)]), Dataset[Discount Applied] = "Yes")
+		formatString: \$#,0
+		lineageTag: a1000000-0000-0000-0000-000000000010
+
+	measure 'Organic Revenue %' = DIVIDE(CALCULATE(SUM(Dataset[Purchase Amount (USD)]), Dataset[Discount Applied] = "No"), SUM(Dataset[Purchase Amount (USD)]))
+		formatString: 0.0%
+		lineageTag: a1000000-0000-0000-0000-000000000011
+
+	measure 'Weekly-BiWeekly Buyers %' = DIVIDE(CALCULATE(COUNTROWS(Dataset), Dataset[Frequency of Purchases] IN {"Weekly","Bi-Weekly"}), COUNTROWS(Dataset))
+		formatString: 0.0%
+		lineageTag: a1000000-0000-0000-0000-000000000012
+
+	column 'Customer ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 81f1882a-6f52-4ad6-a589-42c6821d1d16
+		summarizeBy: count
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: aa8805e7-185c-492f-927d-333a0fc08e5d
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 749b568e-b182-400f-8d64-d325dc70764b
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Purchased'
+		dataType: string
+		lineageTag: bbc0c20b-284b-4d22-ac71-7b0bab5a8245
+		summarizeBy: none
+		sourceColumn: Item Purchased
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 772d5be7-045e-4b93-9738-e3d93351515a
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchase Amount (USD)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 96fbd018-7682-4940-a534-9b26edb17993
+		summarizeBy: sum
+		sourceColumn: Purchase Amount (USD)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: caa15c41-e622-414b-9233-f12ba6424bc5
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		lineageTag: 64d2fbaf-9dde-419b-924d-d4ab70a84d8f
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: 310c293c-3e35-4db0-ad08-bb60ab6b1027
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season
+		dataType: string
+		lineageTag: 6833e711-1541-4e44-942e-ee79b8adee0f
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Review Rating'
+		dataType: double
+		lineageTag: 16fc1c94-6208-48d1-be9a-6201443384c3
+		summarizeBy: sum
+		sourceColumn: Review Rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Subscription Status'
+		dataType: string
+		lineageTag: 8517689d-89f3-4865-b19b-2c8fe2bde1af
+		summarizeBy: none
+		sourceColumn: Subscription Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipping Type'
+		dataType: string
+		lineageTag: 055a07bf-a3ad-4ea0-ade5-3c319dc2a614
+		summarizeBy: none
+		sourceColumn: Shipping Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount Applied'
+		dataType: string
+		lineageTag: b2b64c87-6e2a-42b4-8231-873e12c882a3
+		summarizeBy: none
+		sourceColumn: Discount Applied
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Promo Code Used'
+		dataType: string
+		lineageTag: cf1ffe0d-f6e5-495d-8c54-4eb74083aca7
+		summarizeBy: none
+		sourceColumn: Promo Code Used
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Previous Purchases'
+		dataType: int64
+		formatString: 0
+		lineageTag: b67dbcac-b488-4fab-930e-3b7149847424
+		summarizeBy: sum
+		sourceColumn: Previous Purchases
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Method'
+		dataType: string
+		lineageTag: d74c1be4-892c-4e3f-bc19-d54a3e87dc23
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Frequency of Purchases'
+		dataType: string
+		lineageTag: 3e32c02e-7f4b-4ef2-9580-21a3a775e75d
+		summarizeBy: none
+		sourceColumn: Frequency of Purchases
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("Dataset.csv"),[Delimiter=",", Columns=18, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Customer ID", Int64.Type}, {"Age", Int64.Type}, {"Gender", type text}, {"Item Purchased", type text}, {"Category", type text}, {"Purchase Amount (USD)", Int64.Type}, {"Location", type text}, {"Size", type text}, {"Color", type text}, {"Season", type text}, {"Review Rating", type number}, {"Subscription Status", type text}, {"Shipping Type", type text}, {"Discount Applied", type text}, {"Promo Code Used", type text}, {"Previous Purchases", Int64.Type}, {"Payment Method", type text}, {"Frequency of Purchases", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
